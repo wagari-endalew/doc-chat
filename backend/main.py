@@ -24,7 +24,13 @@ from pptx import Presentation
 import google.generativeai as genai
 
 # ── Config ────────────────────────────────────────────────────────────────────
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AQ.Ab8RN6IBV_V0wy7stwGuH2wXC8BIAsWlKV0udoLyvjjlgrXTbA")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
+    raise RuntimeError(
+        "GEMINI_API_KEY environment variable is not set. "
+        "Create a .env file or set it in your shell before starting the server. "
+        "Get a key at https://aistudio.google.com/apikey"
+    )
 genai.configure(api_key=GEMINI_API_KEY)
 
 CHUNK_SIZE    = 800

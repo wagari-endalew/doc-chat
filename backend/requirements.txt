@@ -5,5 +5,5 @@ pypdf==4.2.0
 python-docx==1.1.2
 python-pptx==0.6.23
 chromadb==0.4.24
-google-generativeai==0.7.2
+google-generativeai
 pydantic==2.7.1
